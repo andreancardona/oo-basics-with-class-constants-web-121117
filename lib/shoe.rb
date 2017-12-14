@@ -1,14 +1,18 @@
+
 class Shoe
-  attr_accessor :color, :size, :material, :condition
-  attr_reader :brand
+ #attr_accessor :author, :page_count  # remove the attr_accessor for genre
+ attr_reader  :brands  # add an attr_reader for genre
 
-  def initialize(brand)
-    @brand = brand
-  end
+ BRANDS = []
 
-  def cobble
-    self.condition = "new"
-    puts "Your shoe is as good as new!"
+ def initialize(brands)
+   @brands = brands
+ if !BRANDS.include?(brands)
+    BRANDS << brands
+    #BRANDS.uniq #returning the brands array - but deleting any duplicates
   end
+ end
+
+ # only keeps track of unique brands
 
 end
